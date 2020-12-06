@@ -12,6 +12,6 @@ var firebaseConfig = {
     measurementId: "G-GRJ85M9583"
   };
   // Initialize Firebase
-  var fireDb = firebase.initializeApp(firebaseConfig);
+  var fireApp = firebase.initializeApp(firebaseConfig);
 
-  export default fireDb.database().ref();
+  export default fireApp.database();

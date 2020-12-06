@@ -74,7 +74,7 @@ export function App() {
 
   //Function for logout
   const handleLogout = () => {
-    fireDb.auth().signOut();
+    fireDb.app.auth().signOut();
   };
 
   //Authentication listener
