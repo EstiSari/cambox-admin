@@ -1,21 +1,50 @@
+import React from 'react';
 
-import React from "react";
-// import './Login.scss';
-import { Container, Button } from "shards-react";
+const login = (props) => {
 
-const Login = () => (
-  
-    <div  className="auth-container"> 
-                <div className="auth-card" >
-                    <p className="auth-title" >Login Page</p>
-                    <input className="input" id="email" placeholder="Email" type="email" />
-                    <input className="input" id="password" placeholder="Password" type="password" />
-                    <button className="btn" >Login</button>
-                </div> 
-                {/* <button>Go to Dashboard</button>  */}
+    const { email, setEmail, password, setPassword, handleLogin, handleSignup, hasAccount, setHasAccount, emailError, passwordError} = props;
+    
+    return (
+        <section className="login">
+            <div className="loginContainer">
+                <label htmlFor="">Username</label>
+                <input type="text" 
+                    autoFocus 
+                    required 
+                    value={email} 
+                    onChange={(e) => setEmail(e.target.value)} 
+                />
+                <p className="errorMsg">{ emailError }</p>
+                <label>Password</label>
+                <input 
+                    type="password"
+                    requited
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                />
+                <p className="errorMsg">{passwordError}</p>
+                <div className="btnContainer">
+                    { !hasAccount ? (
+                        <>
+                            <button onClick={ handleLogin }>Sign in</button>
+                            <p>
+                                Don't have an account ? 
+                                <span onClick={() => setHasAccount(!hasAccount) }>Sign up</span>
+                            </p>
+                        </>
+                    ) : (
+                        <>
+                            <button onClick={ handleSignup }>Sign up</button>
+                            <p>
+                                Have an account ? 
+                                <span onClick={ () => setHasAccount(!hasAccount) }>Sign in</span>
+                            </p>
+                        </>
+                )}
+                </div>
             </div>
- 
-);
+        </section>
+    )
+}
 
-
-export default Login;
+export default login;
