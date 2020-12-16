@@ -25,4 +25,4 @@ export const auth = fireDb.auth();
 export const firestore = fireDb.firestore();
 export const storage = fireDb.storage();
 
-export default fireDb.database().ref();
+export default fireDb.database();

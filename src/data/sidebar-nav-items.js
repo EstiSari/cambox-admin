@@ -1,11 +1,5 @@
 export default function() {
   return [
-    // {
-    //   title: "Login",
-    //   to: "/login",
-    //   htmlBefore: '<i class="material-icons">edit</i>',
-    //   htmlAfter: ""
-    // },
     {
       title: "Dashboard",
       to: "/dashboard",
@@ -33,7 +27,7 @@ export default function() {
     //   to: "/tables",
     // },
     {
-      title: "Customers",
+      title: "User",
       htmlBefore: '<i class="material-icons">person</i>',
       to: "/customers",
     },

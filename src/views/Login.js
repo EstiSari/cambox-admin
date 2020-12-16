@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 // import {connect} from 'react-redux';
 import './Login.css';
-import firebaseDb from '../firebase/firebase'
+import firebaseDb, { database } from '../firebase/firebase'
 // import { loginUser } from "../firebase/auth";
 
 class Login extends Component {
@@ -33,7 +33,7 @@ class Login extends Component {
         const {email,password} = this.state;
         const {history} =  this.props;
         console.log('data before send:',email,password)
-        firebaseDb.auth().signInWithEmailAndPassword(email,password)
+        firebaseDb.app.auth().signInWithEmailAndPassword(email,password)
         .then(res => {
             console.log('success: ', res);
             history.push('/dashboard')
